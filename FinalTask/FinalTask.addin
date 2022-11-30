@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+	<AddIn Type="Command">
+		<Assembly>"C:\Program Files\RevitAPITraining\FinalTask.dll"</Assembly>
+		<AddInId>D3A16242-C658-4E9E-AD60-299CD71E3D29</AddInId>
+		<FullClassName>FinalTask.Main</FullClassName>
+		<VendorId>ADSK</VendorId>
+		<Text>Нумерация помещений</Text>
+	</AddIn>
+</RevitAddIns>

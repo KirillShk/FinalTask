@@ -1,0 +1,49 @@
+﻿<Window x:Class="FinalTask.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FinalTask"
+             mc:Ignorable="d" 
+             Title ="Нумерация помещенй"
+             MaxHeight="350" MaxWidth="250">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=ChooseRadio, Path=IsChecked}" Value="False">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <GroupBox Header="Нумерация" Margin="10" Padding="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Префикс"/>
+                <TextBox Text="{Binding Prefix}" Grid.Row="0" Grid.Column="1"/>
+                <Label Content="Начать с" Grid.Row="1" Grid.Column="0"/>
+                <TextBox Text="{Binding StartNumber}" Grid.Row="1" Grid.Column="1"/>
+                <Label Content="Суффикс" Grid.Row="2" Grid.Column="0"/>
+                <TextBox Text="{Binding Suffix}" Grid.Row="2    " Grid.Column="1"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Применить к" Margin="10" Padding="5">
+            <StackPanel>
+                <RadioButton Content="всем помещениям" IsChecked="{Binding allRooms}"/>
+                <RadioButton x:Name="ChooseRadio"  Content="выбрать" IsChecked="{Binding fewRooms}"/>
+                <Button  Content="Выбрать" Command="{Binding Choose}" Width="60" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </GroupBox>
+
+        <Button Content="Применить" Command="{Binding SaveCommand}" Height="30" Margin="10" Padding="5" Style="{x:Null}"/>
+    </StackPanel>
+</Window>
