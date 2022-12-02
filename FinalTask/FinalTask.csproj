@@ -51,6 +51,9 @@
       <HintPath>C:\Program Files\Autodesk\Revit 2022\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="RevitTask, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RevitTask.3.0.0\lib\net47\RevitTask.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -69,6 +72,7 @@
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainViewViewModel.cs" />
+    <Compile Include="NumericRooms.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectionUtils.cs" />
   </ItemGroup>
